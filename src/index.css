@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: #0a1128;
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  /* Custom Electric Blue Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f8fafc;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border: 2px solid #f8fafc;
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0066ff;
+  }
+}
+
+@layer utilities {
+  /* Subtle Tech Grid Background */
+  .tech-grid {
+    background-size: 48px 48px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 102, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 102, 255, 0.04) 1px, transparent 1px);
+  }
+
+  .tech-radial-glow {
+    background: radial-gradient(circle at 50% 20%, rgba(0, 102, 255, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  /* Premium White & Electric Blue Glassmorphism */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 102, 255, 0.12);
+    box-shadow: 0 10px 30px -10px rgba(10, 17, 40, 0.04), 0 0 1px 1px rgba(0, 102, 255, 0.05);
+  }
+
+  .glass-card-interactive {
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .glass-card-interactive:hover {
+    border-color: rgba(0, 102, 255, 0.35);
+    box-shadow: 0 20px 40px -12px rgba(0, 102, 255, 0.18), 0 0 1px 1px rgba(0, 102, 255, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 102, 255, 0.1);
+    box-shadow: 0 4px 20px -2px rgba(10, 17, 40, 0.03);
+  }
+
+  /* Electric Blue Text Gradient */
+  .text-gradient-blue {
+    background: linear-gradient(135deg, #0052cc 0%, #0066ff 50%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Subtle Glow Text */
+  .text-glow-blue {
+    text-shadow: 0 0 20px rgba(0, 102, 255, 0.3);
+  }
+}
+
+/* Accessibility: Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
